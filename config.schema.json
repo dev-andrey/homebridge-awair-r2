@@ -1,15 +1,26 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "AwairR2",
   "pluginType": "platform",
   "singular": true,
   "schema": {
     "type": "object",
     "properties": {
-      "name": {
-        "title": "Name",
+      "token": {
+        "title": "Bearer token from https://developer.getawair.com",
         "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
+        "placeholder": "<bearer token>",
+        "required": true
+      },
+      "endpoint": {
+        "title": "The 'air-data' endpoint",
+        "type": "string",
+        "placeholder": "15-min-avg",
+        "enum": [
+          "15-min-avg",
+          "5-min-avg",
+          "latest"
+        ],
+        "description": "The 'air-data' endpoint to use. Default = '15-min-avg', Options: '15-min-avg', '5-min-avg' or 'latest'."
       }
     }
   }
