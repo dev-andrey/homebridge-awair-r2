@@ -30,10 +30,13 @@ export class AirQualityPlatformAccessory {
     private readonly accessory: PlatformAccessory
   ) {
     // set accessory information
-    this.accessory.getService(this.platform.Service.AccessoryInformation)!
-      .setCharacteristic(this.platform.Characteristic.Manufacturer, "Default-Manufacturer")
-      .setCharacteristic(this.platform.Characteristic.Model, "Default-Model")
-      .setCharacteristic(this.platform.Characteristic.SerialNumber, "Default-Serial")
+    const service = this.accessory.getService(this.platform.Service.AccessoryInformation)
+    if (service !== undefined) {
+      service
+        .setCharacteristic(this.platform.Characteristic.Manufacturer, "Default-Manufacturer")
+        .setCharacteristic(this.platform.Characteristic.Model, "Default-Model")
+        .setCharacteristic(this.platform.Characteristic.SerialNumber, "Default-Serial")
+    }
 
     // get the LightBulb service if it exists, otherwise create a new LightBulb service
     // you can create multiple services for each accessory
@@ -100,7 +103,7 @@ export class AirQualityPlatformAccessory {
    * Handle "SET" requests from HomeKit
    * These are sent when the user changes the state of an accessory, for example, turning on a Light bulb.
    */
-  setOn(value: CharacteristicValue, callback: CharacteristicSetCallback) {
+  setOn(value: CharacteristicValue, callback: CharacteristicSetCallback): void {
     // implement your own code to turn your device on/off
     this.exampleStates.On = value as boolean
 
@@ -123,7 +126,7 @@ export class AirQualityPlatformAccessory {
    * @example
    * this.service.updateCharacteristic(this.platform.Characteristic.On, true)
    */
-  getOn(callback: CharacteristicGetCallback) {
+  getOn(callback: CharacteristicGetCallback): void {
     // implement your own code to check if the device is on
     const isOn = this.exampleStates.On
 
@@ -139,7 +142,7 @@ export class AirQualityPlatformAccessory {
    * Handle "SET" requests from HomeKit
    * These are sent when the user changes the state of an accessory, for example, changing the Brightness
    */
-  setBrightness(value: CharacteristicValue, callback: CharacteristicSetCallback) {
+  setBrightness(value: CharacteristicValue, callback: CharacteristicSetCallback): void {
     // implement your own code to set the brightness
     this.exampleStates.Brightness = value as number
 
