@@ -1,22 +1,28 @@
 {
   "private": true,
-  "displayName": "Plugin Name",
-  "name": "homebridge-plugin-name",
-  "version": "1.0.0",
-  "description": "A short description about what your plugin does.",
+  "displayName": "Homebridge Awair R2",
+  "name": "homebridge-awair-r2",
+  "version": "0.1.0",
+  "description": "Homebridge plugin for Awair2",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/USERNAME/GITHUB_PROJECT_NAME.git"
+    "url": "git://github.com/dev-andrey/homebridge-awair-r2.git"
   },
   "bugs": {
-    "url": "https://github.com/USERNAME/GITHUB_PROJECT_NAME/issues"
+    "url": "https://github.com/dev-andrey/homebridge-awair-r2/issues"
   },
   "engines": {
     "node": ">=10.17.0",
     "homebridge": ">=1.0.0"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "config.schema.json",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "lint": "eslint src/**.ts --max-warnings=0",
     "watch": "npm run build && npm link && nodemon",

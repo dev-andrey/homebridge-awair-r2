@@ -1,32 +1,12 @@
+# Homebridge Awair R2 Plug-In
 
-<p align="center">
-
-<img src="https://github.com/homebridge/branding/raw/master/logos/homebridge-wordmark-logo-vertical.png" width="150">
-
-</p>
-
-
-# Homebridge Platform Plugin Template
-
-This is a template Homebridge platform plugin and can be used as a base to help you get started developing your own plugin.
-
-This template should be use in conjunction with the [developer documentation](https://developers.homebridge.io/). A full list of all supported service types, and their characteristics is available on this site.
-
-## Clone As Template
-
-Click the link below to create a new GitHub Repository using this template, or click the *Use This Template* button above.
-
-<span align="center">
-
-### [Create New Repository From Template](https://github.com/homebridge/homebridge-plugin-template/generate)
-
-</span>
+The plugin is in development according to [developer documentation](https://developers.homebridge.io/). 
+A full list of all supported service types, and their characteristics is available on this site.
 
 ## Setup Development Environment
 
-To develop Homebridge plugins you must have Node.js 12 or later installed, and a modern code editor such as [VS Code](https://code.visualstudio.com/). This plugin template uses [TypeScript](https://www.typescriptlang.org/) to make development easier and comes with pre-configured settings for [VS Code](https://code.visualstudio.com/) and ESLint. If you are using VS Code install these extensions:
-
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+To develop Homebridge plugins you must have Node.js 12 or later installed. 
+This plugin template uses [TypeScript](https://www.typescriptlang.org/)
 
 ## Install Development Dependencies
 
@@ -35,17 +15,6 @@ Using a terminal, navigate to the project folder and run this command to install
 ```
 npm install
 ```
-
-## Update package.json
-
-Open the [`package.json`](./package.json) and change the following attributes:
-
-* `name` - this should be prefixed with `homebridge-` or `@username/homebridge-` and contain no spaces or special characters apart from a dashes
-* `displayName` - this is the "nice" name displayed in the Homebridge UI
-* `repository.url` - Link to your GitHub repo
-* `bugs.url` - Link to your GitHub repo issues page
-
-When you are ready to publish the plugin you should set `private` to false, or remove the attribute entirely.
 
 ## Update Plugin Defaults
 
