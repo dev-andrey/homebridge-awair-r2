@@ -5,7 +5,11 @@
   "schema": {
     "type": "object",
     "properties": {
-      "token": {
+      "apiUrl": {
+        "type": "string",
+        "placeholder": "https://developer-apis.awair.is/v1/"
+      },
+      "apiToken": {
         "title": "Bearer token from https://developer.getawair.com",
         "type": "string",
         "placeholder": "<bearer token>",

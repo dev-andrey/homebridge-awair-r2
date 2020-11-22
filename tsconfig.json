@@ -8,14 +8,16 @@
       "es2017",
       "es2018"
     ],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "esModuleInterop": true,
-    "noImplicitAny": false
+    "skipLibCheck": true,
+    "preserveConstEnums": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/"

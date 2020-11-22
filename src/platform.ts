@@ -8,9 +8,11 @@ import {
   PlatformConfig,
   Service
 } from "homebridge"
+import axios from "axios"
 
-import { PLATFORM_NAME, PLUGIN_NAME } from "./settings"
+import { AwairConfig, PLATFORM_NAME, PLUGIN_NAME } from "./settings"
 import { AirQualityPlatformAccessory } from "./platformAccessory"
+
 
 export class AwairPlatform implements DynamicPlatformPlugin {
   public readonly Service: typeof Service = this.api.hap.Service
@@ -19,11 +21,14 @@ export class AwairPlatform implements DynamicPlatformPlugin {
   // this is used to track restored cached accessories
   public readonly accessories: PlatformAccessory[] = []
 
+  public readonly awairConfig: AwairConfig
+
   constructor(
     public readonly log: Logger,
     public readonly config: PlatformConfig,
     public readonly api: API
   ) {
+    this.awairConfig = config as unknown as AwairConfig
     this.log.debug("Finished initializing platform:", this.config.name)
 
     // When this event is fired it means Homebridge has restored all cached accessories from disk.
@@ -119,5 +124,9 @@ export class AwairPlatform implements DynamicPlatformPlugin {
         this.api.registerPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory])
       }
     }
+  }
+
+  getUserInfo(): void {
+    axios.get(this.awairConfig.apiUrl + "/users/self")
   }
 }
